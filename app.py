@@ -8,13 +8,9 @@ from PyPDF2 import PdfReader
 
 app = Flask(__name__)
 
-# Get the absolute path of the directory containing this script
-script_dir = os.path.abspath(os.path.dirname(__file__))
-
 # Path to the folder containing CVs
-cv_folder = os.path.join(script_dir, 'Sample')
-output_file = os.path.join(script_dir, 'output.xlsx')
-
+cv_folder = os.path.join(os.getcwd(), 'Sample')
+output_file = os.path.join(os.getcwd(), 'output.xlsx')
 
 # Function to extract email ID and contact number from text
 def extract_info(text):
