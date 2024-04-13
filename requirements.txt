@@ -18,3 +18,4 @@ regex==2023.12.25
 six==1.16.0
 tzdata==2024.1
 Werkzeug==3.0.2
+gunicorn
