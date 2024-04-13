@@ -1,25 +1,25 @@
 ```markdown
 ### CV Data Extraction Web App
 
-This is a Flask web application that allows users to upload CV files (PDF, JPG, or PNG format) to extract email IDs, contact numbers, and text from them.
+This is a Flask web application that allows users to upload CV files PDF to extract email IDs, contact numbers, and text from them.
 
 ## Features
 
 - Supports uploading CV files in PDF, JPG, or PNG format.
 - Uses PyPDF2 for PDF file handling and Tesseract OCR for image file handling.
-- Extracts email IDs and contact numbers from the uploaded CVs.
+- Extract email IDs and contact numbers from the uploaded CVs.
 - Saves extracted data to an Excel file for download.
 
 ## Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/nikhilkum1r/OST_As..git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd your-repo
+   cd OST_As.
    ```
 
 3. Install the required Python packages:
@@ -61,7 +61,7 @@ This is a Flask web application that allows users to upload CV files (PDF, JPG, 
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+
 
 ## Contributions
 
