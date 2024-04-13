@@ -1,25 +1,27 @@
+Sure, here's an updated README for your GitHub repository:
 
-### CV Data Extraction Web App
+```markdown
+# CV Data Extraction Web App
 
-This is a Flask web application that allows users to upload CV files PDF to extract email IDs, contact numbers, and text from them.
+This is a Flask web application that allows users to upload CV files in PDF format to extract email IDs, contact numbers, and text from them.
 
 ## Features
 
 - Supports uploading CV files in PDF, JPG, or PNG format.
 - Uses PyPDF2 for PDF file handling and Tesseract OCR for image file handling.
-- Extract email IDs and contact numbers from the uploaded CVs.
+- Extracts email IDs and contact numbers from the uploaded CVs.
 - Saves extracted data to an Excel file for download.
 
 ## Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/nikhilkum1r/OST_As..git
+   git clone https://github.com/nikhilkum1r/OST_As.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd OST_As.
+   cd OST_As
    ```
 
 3. Install the required Python packages:
@@ -34,7 +36,7 @@ This is a Flask web application that allows users to upload CV files PDF to extr
    python app.py
    ```
 
-2. Access the web app in your browser at `http://localhost:5003`.
+2. Access the web app in your browser at [http://localhost:5003](http://localhost:5003).
 
 3. Upload a CV file (PDF, JPG, or PNG) and click the "Upload" button.
 
@@ -56,16 +58,17 @@ This is a Flask web application that allows users to upload CV files PDF to extr
 - pytesseract
 - regex
 
-## Screenshots
+## Web
 
+The web app is hosted at [https://ost-as.onrender.com/](https://ost-as.onrender.com/).
 
 ## License
 
-
+This project is licensed under the 
 
 ## Contributions
 
 Contributions are welcome! If you encounter any issues or have suggestions, please open an issue or submit a pull request.
 ```
 
-Feel free to customize this template to fit your project's specific details, such as adding screenshots, updating installation instructions, or providing more information about how to use the web app.
+Feel free to further customize the README with additional details or sections as needed.
