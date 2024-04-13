@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, send_file
-import os
+import io
 import pytesseract
 import regex as re
 import pandas as pd
@@ -9,8 +9,7 @@ from PyPDF2 import PdfReader
 app = Flask(__name__)
 
 # Path to the folder containing CVs
-cv_folder = os.path.join(os.getcwd(), 'Sample')
-output_file = os.path.join(os.getcwd(), 'output.xlsx')
+output_file = 'output.xlsx'
 
 # Function to extract email ID and contact number from text
 def extract_info(text):
@@ -32,22 +31,19 @@ def index():
         # Handle file upload
         file = request.files['file']
         if file.filename != '':
-            # Save the uploaded file
-            file_path = os.path.join(cv_folder, file.filename)
-            file.save(file_path)
-
             # Extract data from the uploaded file
             data = []
             cv_text = ''
             if file.filename.endswith('.pdf'):
                 # Handle PDF files using PyPDF2
-                pdf_reader = PdfReader(file_path)
+                pdf_reader = PdfReader(file)
                 for page_num in range(len(pdf_reader.pages)):
                     cv_text += pdf_reader.pages[page_num].extract_text()
 
             elif file.filename.endswith(('.jpg', '.png')):
                 # Handle image files using Tesseract OCR
-                cv_text = pytesseract.image_to_string(Image.open(file_path))
+                img = Image.open(io.BytesIO(file.read()))
+                cv_text = pytesseract.image_to_string(img)
 
             # Extract email ID and contact number
             email, phone = extract_info(cv_text)
@@ -73,4 +69,4 @@ def download():
     return send_file(output_file, as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5003)
